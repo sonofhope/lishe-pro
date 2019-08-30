@@ -1,0 +1,47 @@
+
+// Body
+$body-bg: #fff;
+$c1: #D9DCD8;
+$c2: #9BA747;
+$c3: #F29D4B;
+$c4: #D57030;
+$c5: #8B281F;
+
+// Typography
+$font-family-sans-serif: "Poppins", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+@mixin transform($property){
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin transition($property){
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+@mixin brad($value){
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin bszn($value){
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+ @mixin bshad($value){
+   -webkit-box-shadow: $value;
+   -moz-box-shadow: $value;
+   box-shadow: $value;
+   -o-box-shadow: $value;
+ }

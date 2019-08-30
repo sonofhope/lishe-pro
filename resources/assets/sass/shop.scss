@@ -1,0 +1,158 @@
+@import "variables";
+
+%navBorder{
+  @include bszn(border-box);
+  height: 2.3rem;
+}
+
+#shopWrapper{
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 100%;
+}
+
+#shopNav{
+  grid-area: 1/1/2/2;
+  height: auto;
+  padding: 10px 5% 10px 0;
+  z-index: 500;
+  background: #fff;
+
+  ul {
+    float: left;
+
+    li{
+      list-style-type: none;
+      display: inline;
+      margin-left: 20px;
+      a{
+        text-decoration: none;
+        color: $c2;
+      }
+    }
+  }
+
+  .navInl{
+    display: inline;
+
+    &.dropdown{
+      display: none;
+      float: left;
+      margin-left: 5%;
+
+      .dropdown-item{
+        text-decoration: none;
+        color: $c2!important;
+      }
+
+      button{
+        background: #fff;
+        border: 1px solid $c4;
+        color: $c2;
+        @include brad(3px);
+        @extend %navBorder;
+      }
+    }
+  }
+  #searchBox{
+    max-width: 45%;
+    float: right;
+    form{
+      position: relative;
+    }
+    input{
+      max-width: 100%;
+      border: 1px solid $c4;
+      padding-left: .7rem;
+      @include brad(3px);
+      @extend %navBorder;
+    }
+    button{
+      position: absolute;
+      top: .3rem;
+      right: 0;
+      background: unset;
+      color: $c2;
+      font-family: FontAwesome;
+      border: none;
+    }
+  }
+}
+
+#shopIntro{
+  grid-area: 2/1/3/2;
+  height: 45vh;
+  width: 90vw;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-image: url('https://store.eatingfree.com/images/banner-samples-menus.jpg');
+  margin-left: 5%;
+}
+
+#topSellr{
+  grid-area: 3/1/4/2;
+  padding: 5%;
+  justify-items: center;
+  align-items: center;
+}
+
+#topPicks{
+  grid-area: 4/1/5/2;
+  padding: 5%;
+  justify-items: center;
+  align-items: center;
+}
+
+#topSellr, #topPicks{
+  h2{
+    color: $c5;
+  }
+  .item{
+    display: inline-block;
+    margin-right: 40px;
+    .card{
+      border: none!important;
+      text-decoration: none;
+    }
+    .img{
+      width: 250px;height:150px;
+    }
+    .card-body{
+      text-align: center;
+      p a{
+        text-decoration: none;
+        color: $c4;
+      }
+      h5 {color: $c5;}
+    }
+  }
+}
+
+//Media queries
+@media screen and (max-width: 890px){
+  .dropdown.navInl{
+    display: inline!important;
+  }
+  #shopNav ul{
+    display: none!important;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #searchBox form {
+    input{
+    max-width: 100%;
+    }
+  }
+  #topSellr, #topPicks{
+    h2{
+      color: $c5;
+    }
+    .item{
+      margin-right: 10px;
+      .card img{
+        width: 150px!important;
+      }
+    }
+  }
+}
